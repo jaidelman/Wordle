@@ -26,7 +26,7 @@ struct GameView: View {
                 focusedField = nil
             }
             
-            TextEditor(text: $viewModel.currentGuess)
+            TextEditor(text: $viewModel.currentGuessValue)
                 .focused($focusedField, equals: .textEditor)
                 .foregroundColor(.white)
             Spacer()

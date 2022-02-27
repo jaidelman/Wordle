@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F02788DB27CC2EA700EB1F19 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */; };
 		F0F6469727CBF4740026B353 /* WordleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6469627CBF4740026B353 /* WordleApp.swift */; };
 		F0F6469B27CBF4790026B353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6469A27CBF4790026B353 /* Assets.xcassets */; };
 		F0F6469E27CBF4790026B353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6469D27CBF4790026B353 /* Preview Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
 		F0F6469327CBF4740026B353 /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F6469627CBF4740026B353 /* WordleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleApp.swift; sourceTree = "<group>"; };
 		F0F6469A27CBF4790026B353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F02788D927CC2E9800EB1F19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F0F6468A27CBF4740026B353 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +71,7 @@
 		F0F6469527CBF4740026B353 /* Wordle */ = {
 			isa = PBXGroup;
 			children = (
+				F02788D927CC2E9800EB1F19 /* Extensions */,
 				F0F646A927CBF5B10026B353 /* ViewModels */,
 				F0F646A627CBF58A0026B353 /* Views */,
 				F0F6469627CBF4740026B353 /* WordleApp.swift */,
@@ -174,6 +185,7 @@
 				F0F646AD27CBF5D90026B353 /* LetterViewModel.swift in Sources */,
 				F0F6469727CBF4740026B353 /* WordleApp.swift in Sources */,
 				F0F646AF27CC040E0026B353 /* GameView.swift in Sources */,
+				F02788DB27CC2EA700EB1F19 /* StringProtocolExtension.swift in Sources */,
 				F0F646B127CC04250026B353 /* GameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
