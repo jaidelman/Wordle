@@ -33,8 +33,11 @@ class LetterViewModel: ObservableObject {
         return letter.color
     }
     
-    func setLetter(letter: Character?) {
+    func setLetter(_ letter: Character?) {
         self.letter.letter = letter
     }
 
+    func setColor(_ color: Color) {
+        self.letter.color = color
+    }
 }

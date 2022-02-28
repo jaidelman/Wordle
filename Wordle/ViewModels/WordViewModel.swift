@@ -22,6 +22,32 @@ class WordViewModel: ObservableObject {
     }
     
     func updateGuess(index: Int, letter: Character?) {
-        guess[index].setLetter(letter: letter)
+        guess[index].setLetter(letter)
+    }
+    
+    private func getGuess() -> String {
+        var string = ""
+        
+        for letter in guess {
+            string.append(letter.character)
+        }
+        
+        return string
+    }
+    
+    func makeGuess() -> Bool {
+        if getGuess() == correctWord {
+            return true
+        }
+        
+        for (i, letter) in guess.enumerated() {
+            if letter.character == String(correctWord[i]) {
+                letter.setColor(.green)
+            } else if correctWord.contains(letter.character) {
+                letter.setColor(.yellow)
+            }
+        }
+        
+        return false
     }
 }

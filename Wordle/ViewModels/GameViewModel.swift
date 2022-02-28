@@ -10,7 +10,7 @@ import SwiftUI
 
 class GameViewModel: ObservableObject {
     @Published var alphabetViewModel: AlphabetViewModel = AlphabetViewModel()
-    @Published var currentGuessNumber: Int = 0
+    @Published var currentGuessNumber: Int = 1
     @Published var guesses: [WordViewModel] = []
     
     init(correctWord: String) {
@@ -20,7 +20,7 @@ class GameViewModel: ObservableObject {
     }
     
     func updateGuess(guess: String) {
-        let currentGuess = guesses[currentGuessNumber]
+        let currentGuess = guesses[currentGuessNumber - 1]
         let index = guess.count == 0 ? 0 : guess.count - 1
         let letter = guess.count == 0 ? nil : guess[guess.count - 1]
         
@@ -35,8 +35,9 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func submitGuess(guess: String) {
-        print(guess)
+    func submitGuess() {
+        let correctAnswer = guesses[currentGuessNumber - 1].makeGuess()
+        currentGuessNumber += 1
     }
 
 }

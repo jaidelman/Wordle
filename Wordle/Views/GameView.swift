@@ -26,7 +26,10 @@ struct GameView: View {
             
             
             Button("Submit") {
-                viewModel.submitGuess(guess: currentGuess)
+                if currentGuess.count == 5 && viewModel.currentGuessNumber < 6 {
+                    viewModel.submitGuess()
+                    currentGuess = ""
+                }
             }
             .buttonStyle(RectangularButton())
         }

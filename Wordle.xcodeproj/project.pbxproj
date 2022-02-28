@@ -111,12 +111,12 @@
 		F0F646A627CBF58A0026B353 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F0F646A427CBF5830026B353 /* LetterView.swift */,
+				F07457A027CC787600C55FF7 /* AlphabetView.swift */,
 				F02AA8A427CC86300048E442 /* AlphabetLetterView.swift */,
 				F02AA8A827CC9C190048E442 /* BackspaceView.swift */,
-				F0F646A727CBF5960026B353 /* WordView.swift */,
+				F0F646A427CBF5830026B353 /* LetterView.swift */,
 				F0F646AE27CC040E0026B353 /* GameView.swift */,
-				F07457A027CC787600C55FF7 /* AlphabetView.swift */,
+				F0F646A727CBF5960026B353 /* WordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,10 +124,10 @@
 		F0F646A927CBF5B10026B353 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				F0F646AA27CBF5BC0026B353 /* WordViewModel.swift */,
+				F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */,
 				F0F646AC27CBF5D90026B353 /* LetterViewModel.swift */,
 				F0F646B027CC04250026B353 /* GameViewModel.swift */,
-				F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */,
+				F0F646AA27CBF5BC0026B353 /* WordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -344,7 +344,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Wordle/Preview Content\"";
 				DEVELOPMENT_TEAM = 7H86Y5D4MW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -373,7 +372,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Wordle/Preview Content\"";
 				DEVELOPMENT_TEAM = 7H86Y5D4MW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
