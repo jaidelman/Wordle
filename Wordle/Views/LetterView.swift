@@ -27,9 +27,7 @@ struct LetterView: View {
             .foregroundColor(.white)
             .background(
                 ZStack {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .fill(viewModel.color)
-                            .frame(width: sideLength, height: sideLength)
+                    viewModel.color.cornerRadius(cornerRadius)
                     RoundedRectangle(cornerRadius: cornerRadius)
                         .stroke(.black, lineWidth: 2)
                         .frame(width: sideLength, height: sideLength)

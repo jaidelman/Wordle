@@ -10,6 +10,7 @@
 		F02788DB27CC2EA700EB1F19 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */; };
 		F02AA8A527CC86300048E442 /* AlphabetLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8A427CC86300048E442 /* AlphabetLetterView.swift */; };
 		F02AA8A927CC9C190048E442 /* BackspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8A827CC9C190048E442 /* BackspaceView.swift */; };
+		F02AA8AD27CD4F200048E442 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8AC27CD4F200048E442 /* WinnerView.swift */; };
 		F074579D27CC728800C55FF7 /* RectangularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074579C27CC728800C55FF7 /* RectangularButton.swift */; };
 		F07457A127CC787600C55FF7 /* AlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A027CC787600C55FF7 /* AlphabetView.swift */; };
 		F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */; };
@@ -28,6 +29,7 @@
 		F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
 		F02AA8A427CC86300048E442 /* AlphabetLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetLetterView.swift; sourceTree = "<group>"; };
 		F02AA8A827CC9C190048E442 /* BackspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceView.swift; sourceTree = "<group>"; };
+		F02AA8AC27CD4F200048E442 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		F074579C27CC728800C55FF7 /* RectangularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularButton.swift; sourceTree = "<group>"; };
 		F07457A027CC787600C55FF7 /* AlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetView.swift; sourceTree = "<group>"; };
 		F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetViewModel.swift; sourceTree = "<group>"; };
@@ -114,9 +116,10 @@
 				F07457A027CC787600C55FF7 /* AlphabetView.swift */,
 				F02AA8A427CC86300048E442 /* AlphabetLetterView.swift */,
 				F02AA8A827CC9C190048E442 /* BackspaceView.swift */,
-				F0F646A427CBF5830026B353 /* LetterView.swift */,
 				F0F646AE27CC040E0026B353 /* GameView.swift */,
+				F0F646A427CBF5830026B353 /* LetterView.swift */,
 				F0F646A727CBF5960026B353 /* WordView.swift */,
+				F02AA8AC27CD4F200048E442 /* WinnerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */,
-				F0F646AC27CBF5D90026B353 /* LetterViewModel.swift */,
 				F0F646B027CC04250026B353 /* GameViewModel.swift */,
+				F0F646AC27CBF5D90026B353 /* LetterViewModel.swift */,
 				F0F646AA27CBF5BC0026B353 /* WordViewModel.swift */,
 			);
 			path = ViewModels;
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0F646A827CBF5960026B353 /* WordView.swift in Sources */,
+				F02AA8AD27CD4F200048E442 /* WinnerView.swift in Sources */,
 				F07457A127CC787600C55FF7 /* AlphabetView.swift in Sources */,
 				F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */,
 				F02AA8A527CC86300048E442 /* AlphabetLetterView.swift in Sources */,

@@ -13,6 +13,7 @@ class GameViewModel: ObservableObject {
     @Published var alphabetViewModel: AlphabetViewModel = AlphabetViewModel()
     @Published var currentGuessNumber: Int = 1
     @Published var guesses: [WordViewModel] = []
+    @Published var correctGuess: Bool = false
     
     init(correctAnswer: String) {
         self.correctAnswer = correctAnswer
@@ -38,14 +39,12 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func submitGuess() -> Bool {
+    func submitGuess() {
         let currentGuess = guesses[currentGuessNumber - 1]
-        let isCorrect = currentGuess.makeGuess()
+        correctGuess = currentGuess.makeGuess()
         
         alphabetViewModel.makeGuess(guess: currentGuess.getGuess(), correctAnswer: correctAnswer)
         currentGuessNumber += 1
-        
-        return isCorrect
     }
 
 }

@@ -10,31 +10,36 @@ import SwiftUI
 struct GameView: View {
     @StateObject var viewModel: GameViewModel
     @State var currentGuess: String = ""
-    @State var correctGuess: Bool = false
     
     var body: some View {
-        VStack(spacing: 30) {
-            Spacer()
-            ForEach(0 ..< viewModel.guesses.count, id: \.self) { i in
-                WordView(viewModel: viewModel.guesses[i])
-                    .frame(maxWidth: .infinity)
-            }
-            
-            AlphabetView(viewModel: viewModel.alphabetViewModel, currentGuessValue: $currentGuess)
-                .onChange(of: currentGuess) { guess in
-                    viewModel.updateGuess(guess: guess)
+        ZStack {
+            VStack(spacing: 30) {
+                Spacer()
+                ForEach(0 ..< viewModel.guesses.count, id: \.self) { i in
+                    WordView(viewModel: viewModel.guesses[i])
+                        .frame(maxWidth: .infinity)
                 }
-            
-            
-            Button("Submit") {
-                if currentGuess.count == 5 && viewModel.currentGuessNumber < 6 {
-                    self.correctGuess = viewModel.submitGuess()
-                    self.currentGuess = ""
+                
+                AlphabetView(viewModel: viewModel.alphabetViewModel, currentGuessValue: $currentGuess)
+                    .onChange(of: currentGuess) { guess in
+                        viewModel.updateGuess(guess: guess)
+                    }
+                    .disabled(viewModel.correctGuess)
+                
+                
+                Button("Submit") {
+                    if currentGuess.count == 5 && viewModel.currentGuessNumber < 6 {
+                        viewModel.submitGuess()
+                        self.currentGuess = ""
+                    }
                 }
+                .buttonStyle(RectangularButton(color: .green))
             }
-            .buttonStyle(RectangularButton())
+            .padding()
+            
+            WinnerView(numberOfGuesses: viewModel.currentGuessNumber)
+                .opacity(viewModel.correctGuess ? 1 : 0)
         }
-        .padding()
     }
 }
 

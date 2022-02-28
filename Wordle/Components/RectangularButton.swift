@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct RectangularButton: ButtonStyle {
+    let color: Color
+    var textColor: Color = .black
     
-  func makeBody(configuration: Configuration) -> some View {
-    configuration.label
-    .foregroundColor(.black)
-    .padding()
-    .background(Color.green.cornerRadius(8))
-    .scaleEffect(configuration.isPressed ? 0.95 : 1)
-  }
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(textColor)
+            .padding()
+            .background(
+                ZStack {
+                    color.cornerRadius(8)
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(.black, lineWidth: 2)
+                })
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
+    }
     
 }
