@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
     @StateObject var viewModel: GameViewModel
     @State var currentGuess: String = ""
+    @State var showWin: Bool = false
     
     var body: some View {
         ZStack {
@@ -34,11 +35,18 @@ struct GameView: View {
                     }
                 }
                 .buttonStyle(RectangularButton(color: .green))
+                .onChange(of: viewModel.correctGuess) { _ in
+                    withAnimation(.linear(duration: 1)) {
+                        showWin = true
+                    }
+                }
             }
             .padding()
             
-            WinnerView(numberOfGuesses: viewModel.currentGuessNumber)
-                .opacity(viewModel.correctGuess ? 1 : 0)
+            if showWin {
+                WinnerView(numberOfGuesses: viewModel.currentGuessNumber)
+                    .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+            }
         }
     }
 }

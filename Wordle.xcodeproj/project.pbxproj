@@ -11,6 +11,7 @@
 		F02AA8A527CC86300048E442 /* AlphabetLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8A427CC86300048E442 /* AlphabetLetterView.swift */; };
 		F02AA8A927CC9C190048E442 /* BackspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8A827CC9C190048E442 /* BackspaceView.swift */; };
 		F02AA8AD27CD4F200048E442 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8AC27CD4F200048E442 /* WinnerView.swift */; };
+		F02AA8AF27CD5F680048E442 /* AnyTransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8AE27CD5F680048E442 /* AnyTransitionExtension.swift */; };
 		F074579D27CC728800C55FF7 /* RectangularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074579C27CC728800C55FF7 /* RectangularButton.swift */; };
 		F07457A127CC787600C55FF7 /* AlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A027CC787600C55FF7 /* AlphabetView.swift */; };
 		F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */; };
@@ -30,6 +31,7 @@
 		F02AA8A427CC86300048E442 /* AlphabetLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetLetterView.swift; sourceTree = "<group>"; };
 		F02AA8A827CC9C190048E442 /* BackspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceView.swift; sourceTree = "<group>"; };
 		F02AA8AC27CD4F200048E442 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
+		F02AA8AE27CD5F680048E442 /* AnyTransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionExtension.swift; sourceTree = "<group>"; };
 		F074579C27CC728800C55FF7 /* RectangularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularButton.swift; sourceTree = "<group>"; };
 		F07457A027CC787600C55FF7 /* AlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetView.swift; sourceTree = "<group>"; };
 		F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetViewModel.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		F02788D927CC2E9800EB1F19 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F02AA8AE27CD5F680048E442 /* AnyTransitionExtension.swift */,
 				F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */,
 			);
 			path = Extensions;
@@ -211,6 +214,7 @@
 				F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */,
 				F02AA8A527CC86300048E442 /* AlphabetLetterView.swift in Sources */,
 				F0F646AB27CBF5BC0026B353 /* WordViewModel.swift in Sources */,
+				F02AA8AF27CD5F680048E442 /* AnyTransitionExtension.swift in Sources */,
 				F074579D27CC728800C55FF7 /* RectangularButton.swift in Sources */,
 				F0F646A527CBF5830026B353 /* LetterView.swift in Sources */,
 				F0F646AD27CBF5D90026B353 /* LetterViewModel.swift in Sources */,
