@@ -26,11 +26,11 @@ class AlphabetViewModel: ObservableObject {
                 
                 if String(character) == letter.character {
                     if letter.character == String(correctAnswer[i]) {
-                        letter.setColor(.green)
+                        letter.setColor(.correctGreen)
                     } else if correctAnswer.contains(letter.character) {
-                        letter.setColor(.yellow)
+                        letter.setColor(.correctYellow)
                     } else {
-                        letter.setColor(.black)
+                        letter.setColor(.borderColor)
                     }
                     break
                 }

@@ -20,14 +20,14 @@ struct WinnerView: View {
             Button("Play Again") {
                 
             }
-            .buttonStyle(RectangularButton(color: .blue, textColor: .white))
+            .buttonStyle(RectangularButton(color: .winnerButton, textColor: .textColor, borderColor: .black))
             Spacer()
         }
         .background(
             ZStack {
-                Color.white.cornerRadius(10)
+                Color.winner.cornerRadius(10)
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(.black, lineWidth: 2)
+                    .stroke(Color.borderColor, lineWidth: 2)
                     .frame(width: width, height: height)
             }.padding()
         )

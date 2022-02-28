@@ -34,7 +34,7 @@ struct GameView: View {
                         self.currentGuess = ""
                     }
                 }
-                .buttonStyle(RectangularButton(color: .green))
+                .buttonStyle(RectangularButton(color: .correctGreen))
                 .onChange(of: viewModel.correctGuess) { _ in
                     withAnimation(.linear(duration: 0.8)) {
                         showWin = true
@@ -54,5 +54,6 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView(viewModel: GameViewModel(correctAnswer: "CHAOS"))
+        GameView(viewModel: GameViewModel(correctAnswer: "CHAOS")).preferredColorScheme(.dark)
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct RectangularButton: ButtonStyle {
     let color: Color
     var textColor: Color = .black
+    var borderColor: Color = .borderColor
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -19,7 +20,7 @@ struct RectangularButton: ButtonStyle {
                 ZStack {
                     color.cornerRadius(8)
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(.black, lineWidth: 2)
+                        .stroke(borderColor, lineWidth: 2)
                 })
             .scaleEffect(configuration.isPressed ? 0.95 : 1)
     }

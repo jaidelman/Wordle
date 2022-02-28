@@ -26,7 +26,7 @@ struct AlphabetView: View {
             ForEach(0 ..< viewModel.letterViewModels.count, id: \.self) { i in
                 AlphabetLetterView(viewModel: viewModel.letterViewModels[i], currentGuessValue: $currentGuessValue)
             }
-            BackspaceView(viewModel: LetterViewModel(letter: Letter(letter: "🔙", color: .white)), currentGuessValue: $currentGuessValue)
+            BackspaceView(viewModel: LetterViewModel(letter: Letter(letter: "🔙", color: .backspace)), currentGuessValue: $currentGuessValue)
         }
     }
 }

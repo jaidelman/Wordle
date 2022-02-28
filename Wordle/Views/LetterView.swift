@@ -9,9 +9,10 @@ import SwiftUI
 
 struct LetterView: View {
     @StateObject var viewModel: LetterViewModel
-    let sideLength: CGFloat
-    let fontSize: CGFloat
-    let cornerRadius: CGFloat
+    
+    private let sideLength: CGFloat
+    private let fontSize: CGFloat
+    private let cornerRadius: CGFloat
 
     init(viewModel: LetterViewModel, isForGuess: Bool) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -24,12 +25,12 @@ struct LetterView: View {
     var body: some View {
         Text(viewModel.character)
             .font(.system(size: fontSize))
-            .foregroundColor(.white)
+            .foregroundColor(.textColor)
             .background(
                 ZStack {
                     viewModel.color.cornerRadius(cornerRadius)
                     RoundedRectangle(cornerRadius: cornerRadius)
-                        .stroke(.black, lineWidth: 2)
+                        .stroke(Color.borderColor, lineWidth: 2)
                         .frame(width: sideLength, height: sideLength)
                 })
             .animation(.easeIn(duration: 0.5), value: viewModel.color)

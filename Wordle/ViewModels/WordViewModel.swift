@@ -38,16 +38,16 @@ class WordViewModel: ObservableObject {
     func makeGuess() -> Bool {
         if getGuess() == correctAnswer {
             for letter in guess {
-                letter.setColor(.green)
+                letter.setColor(.correctGreen)
             }
             return true
         }
         
         for (i, letter) in guess.enumerated() {
             if letter.character == String(correctAnswer[i]) {
-                letter.setColor(.green)
+                letter.setColor(.correctGreen)
             } else if correctAnswer.contains(letter.character) {
-                letter.setColor(.yellow)
+                letter.setColor(.correctYellow)
             }
         }
         
