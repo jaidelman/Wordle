@@ -32,7 +32,7 @@ struct WinnerView: View {
             }.padding()
         )
         .frame(width: width, height: height)
-        .opacity(0.9)
+        .opacity(0.95)
     }
 }
 

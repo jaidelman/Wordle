@@ -32,6 +32,7 @@ struct LetterView: View {
                         .stroke(.black, lineWidth: 2)
                         .frame(width: sideLength, height: sideLength)
                 })
+            .animation(.easeIn(duration: 0.5), value: viewModel.color)
     }
 }
 

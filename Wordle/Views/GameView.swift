@@ -36,7 +36,7 @@ struct GameView: View {
                 }
                 .buttonStyle(RectangularButton(color: .green))
                 .onChange(of: viewModel.correctGuess) { _ in
-                    withAnimation(.linear(duration: 1)) {
+                    withAnimation(.linear(duration: 0.8)) {
                         showWin = true
                     }
                 }
@@ -44,7 +44,7 @@ struct GameView: View {
             .padding()
             
             if showWin {
-                WinnerView(numberOfGuesses: viewModel.currentGuessNumber)
+                WinnerView(numberOfGuesses: viewModel.currentGuessNumber - 1)
                     .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
             }
         }
