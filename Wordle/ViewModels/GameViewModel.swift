@@ -9,13 +9,9 @@ import Foundation
 import SwiftUI
 
 class GameViewModel: ObservableObject {
+    @Published var alphabetViewModel: AlphabetViewModel = AlphabetViewModel()
     @Published var currentGuessNumber: Int = 0
     @Published var guesses: [WordViewModel] = []
-    @Published var currentGuessValue: String = "" {
-        didSet {
-            updateGuess()
-        }
-    }
     
     init(correctWord: String) {
         for _ in 0 ..< 6 {
@@ -23,15 +19,24 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func updateGuess() {
+    func updateGuess(guess: String) {
         let currentGuess = guesses[currentGuessNumber]
-        let index = currentGuessValue.count == 0 ? 0 : currentGuessValue.count - 1
-        let letter = currentGuessValue.count == 0 ? nil : currentGuessValue[currentGuessValue.count - 1]
+        let index = guess.count == 0 ? 0 : guess.count - 1
+        let letter = guess.count == 0 ? nil : guess[guess.count - 1]
         
-        currentGuess.updateGuess(index: index, letter: letter)
+        //Update letter
+        if index < WordViewModel.wordLength {
+            currentGuess.updateGuess(index: index, letter: letter)
+        }
+        
+        //On backspace, make sure we set removed letter to nil
+        if index < WordViewModel.wordLength - 1 {
+            currentGuess.updateGuess(index: index + 1, letter: nil)
+        }
     }
     
-    func confirmGuess() {
-        
+    func submitGuess(guess: String) {
+        print(guess)
     }
+
 }

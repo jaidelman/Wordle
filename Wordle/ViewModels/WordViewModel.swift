@@ -8,7 +8,7 @@
 import Foundation
 
 class WordViewModel: ObservableObject {
-    private static let wordLength: Int = 5
+    static let wordLength: Int = 5
     private let correctWord: String
     
     @Published var guess: [LetterViewModel] = []
@@ -17,7 +17,7 @@ class WordViewModel: ObservableObject {
         self.correctWord = correctWord
         
         for _ in 0 ..< WordViewModel.wordLength {
-            self.guess.append(LetterViewModel(letter: Letter()))
+            self.guess.append(LetterViewModel(letter: Letter(color: .gray)))
         }
     }
     

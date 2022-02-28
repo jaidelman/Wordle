@@ -11,7 +11,7 @@ import SwiftUI
 
 struct Letter {
     var letter: Character?
-    var color: Color = Color.gray
+    var color: Color
 }
 
 class LetterViewModel: ObservableObject {

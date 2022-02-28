@@ -1,0 +1,40 @@
+//
+//  AlphabetView.swift
+//  Wordle
+//
+//  Created by Josh Aidelman on 2022-02-27.
+//
+
+import SwiftUI
+
+struct AlphabetView: View {
+    @StateObject var viewModel: AlphabetViewModel
+    @Binding var currentGuessValue: String
+    
+    let rows = [
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0)
+    ]
+    
+    var body: some View {
+        LazyVGrid(columns: rows, alignment: .center, spacing: 30) {
+            ForEach(0 ..< viewModel.letterViewModels.count, id: \.self) { i in
+                AlphabetLetterView(viewModel: viewModel.letterViewModels[i], currentGuessValue: $currentGuessValue)
+            }
+            BackspaceView(viewModel: LetterViewModel(letter: Letter(letter: "🔙", color: .white)), currentGuessValue: $currentGuessValue)
+        }
+    }
+}
+
+struct AlphabetView_Previews: PreviewProvider {
+    static let alphabetViewModel = AlphabetViewModel()
+    
+    static var previews: some View {
+        AlphabetView(viewModel: alphabetViewModel, currentGuessValue: Binding.constant("TEST"))
+    }
+}

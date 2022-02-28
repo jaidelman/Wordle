@@ -9,22 +9,44 @@ import SwiftUI
 
 struct LetterView: View {
     @StateObject var viewModel: LetterViewModel
+    let sideLength: CGFloat
+    let fontSize: CGFloat
+    let cornerRadius: CGFloat
+
+    init(viewModel: LetterViewModel, isForGuess: Bool) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        
+        self.sideLength = isForGuess ? UIScreen.main.bounds.width/6 : UIScreen.main.bounds.width/10
+        self.fontSize = isForGuess ? 40 : 30
+        self.cornerRadius = isForGuess ? 0 : 8
+    }
     
     var body: some View {
         Text(viewModel.character)
+            .font(.system(size: fontSize))
             .foregroundColor(.white)
-            .font(.system(size: 40))
-            .background(Rectangle()
-                            .fill(viewModel.color)
-                            .frame(width: UIScreen.main.bounds.width/6, height: UIScreen.main.bounds.width/6)
-                            .border(.black, width: 2)
-                        )
+            .background(
+                ZStack {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(viewModel.color)
+                            .frame(width: sideLength, height: sideLength)
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .stroke(.black, lineWidth: 2)
+                        .frame(width: sideLength, height: sideLength)
+                })
     }
 }
 
 struct LetterView_Previews: PreviewProvider {
     static var previews: some View {
         let letter = Letter(letter: "a", color: .gray)
-        LetterView(viewModel: LetterViewModel(letter: letter))
+        
+        HStack {
+            Spacer()
+            LetterView(viewModel: LetterViewModel(letter: letter), isForGuess: true)
+            Spacer()
+            LetterView(viewModel: LetterViewModel(letter: letter), isForGuess: false)
+            Spacer()
+        }
     }
 }

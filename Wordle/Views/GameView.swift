@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct GameView: View {
-    
-    enum Field: Hashable {
-        case textEditor
-    }
-    
     @StateObject var viewModel: GameViewModel
-    @FocusState private var focusedField: Field?
+    @State var currentGuess: String = ""
     
     var body: some View {
         VStack(spacing: 30) {
+            Spacer()
             ForEach(0 ..< viewModel.guesses.count, id: \.self) { i in
                 WordView(viewModel: viewModel.guesses[i])
                     .frame(maxWidth: .infinity)
             }
-            .onTapGesture {
-                focusedField = nil
-            }
             
-            TextEditor(text: $viewModel.currentGuessValue)
-                .focused($focusedField, equals: .textEditor)
-                .foregroundColor(.white)
-            Spacer()
+            AlphabetView(viewModel: viewModel.alphabetViewModel, currentGuessValue: $currentGuess)
+                .onChange(of: currentGuess) { guess in
+                    viewModel.updateGuess(guess: guess)
+                }
+            
+            
+            Button("Submit") {
+                viewModel.submitGuess(guess: currentGuess)
+            }
+            .buttonStyle(RectangularButton())
         }
         .padding()
     }
@@ -37,10 +36,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(viewModel: createMockGameViewModel())
-    }
-    
-    static func createMockGameViewModel() -> GameViewModel {
-        return GameViewModel(correctWord: "CHAOS")
+        GameView(viewModel: GameViewModel(correctWord: "CHAOS"))
     }
 }
