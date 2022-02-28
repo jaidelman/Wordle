@@ -26,7 +26,7 @@ struct WordView_Previews: PreviewProvider {
     }
     
     static func createMockWordViewModel() -> WordViewModel {
-        let wordViewModel = WordViewModel(correctWord: "CHAOS")
+        let wordViewModel = WordViewModel(correctAnswer: "CHAOS")
         wordViewModel.updateGuess(index: 0, letter: "A")
         wordViewModel.updateGuess(index: 1, letter: "B")
         wordViewModel.updateGuess(index: 2, letter: "C")

@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
     @StateObject var viewModel: GameViewModel
     @State var currentGuess: String = ""
+    @State var correctGuess: Bool = false
     
     var body: some View {
         VStack(spacing: 30) {
@@ -27,8 +28,8 @@ struct GameView: View {
             
             Button("Submit") {
                 if currentGuess.count == 5 && viewModel.currentGuessNumber < 6 {
-                    viewModel.submitGuess()
-                    currentGuess = ""
+                    self.correctGuess = viewModel.submitGuess()
+                    self.currentGuess = ""
                 }
             }
             .buttonStyle(RectangularButton())
@@ -39,6 +40,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(viewModel: GameViewModel(correctWord: "CHAOS"))
+        GameView(viewModel: GameViewModel(correctAnswer: "CHAOS"))
     }
 }

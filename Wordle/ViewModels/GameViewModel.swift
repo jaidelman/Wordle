@@ -9,13 +9,16 @@ import Foundation
 import SwiftUI
 
 class GameViewModel: ObservableObject {
+    private let correctAnswer: String
     @Published var alphabetViewModel: AlphabetViewModel = AlphabetViewModel()
     @Published var currentGuessNumber: Int = 1
     @Published var guesses: [WordViewModel] = []
     
-    init(correctWord: String) {
+    init(correctAnswer: String) {
+        self.correctAnswer = correctAnswer
+        
         for _ in 0 ..< 6 {
-            self.guesses.append(WordViewModel(correctWord: correctWord))
+            self.guesses.append(WordViewModel(correctAnswer: correctAnswer))
         }
     }
     
@@ -35,9 +38,14 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func submitGuess() {
-        let correctAnswer = guesses[currentGuessNumber - 1].makeGuess()
+    func submitGuess() -> Bool {
+        let currentGuess = guesses[currentGuessNumber - 1]
+        let isCorrect = currentGuess.makeGuess()
+        
+        alphabetViewModel.makeGuess(guess: currentGuess.getGuess(), correctAnswer: correctAnswer)
         currentGuessNumber += 1
+        
+        return isCorrect
     }
 
 }

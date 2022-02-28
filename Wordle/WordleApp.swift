@@ -11,7 +11,7 @@ import SwiftUI
 struct WordleApp: App {
     var body: some Scene {
         WindowGroup {
-            GameView(viewModel: GameViewModel(correctWord: "BLANK"))
+            GameView(viewModel: GameViewModel(correctAnswer: "BLANK"))
         }
     }
 }

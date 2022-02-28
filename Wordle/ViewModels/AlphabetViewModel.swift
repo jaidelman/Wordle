@@ -19,4 +19,23 @@ class AlphabetViewModel: ObservableObject {
             letterViewModels.append(letterViewModel)
         }
     }
+    
+    func makeGuess(guess: String, correctAnswer: String) {
+        for (i, character) in guess.enumerated() {
+            for letter in letterViewModels {
+                
+                if String(character) == letter.character {
+                    if letter.character == String(correctAnswer[i]) {
+                        letter.setColor(.green)
+                    } else if correctAnswer.contains(letter.character) {
+                        letter.setColor(.yellow)
+                    } else {
+                        letter.setColor(.black)
+                    }
+                    break
+                }
+                
+            }
+        }
+    }
 }

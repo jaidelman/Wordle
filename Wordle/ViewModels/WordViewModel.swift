@@ -9,12 +9,12 @@ import Foundation
 
 class WordViewModel: ObservableObject {
     static let wordLength: Int = 5
-    private let correctWord: String
+    private let correctAnswer: String
     
     @Published var guess: [LetterViewModel] = []
     
-    init(correctWord: String) {
-        self.correctWord = correctWord
+    init(correctAnswer: String) {
+        self.correctAnswer = correctAnswer
         
         for _ in 0 ..< WordViewModel.wordLength {
             self.guess.append(LetterViewModel(letter: Letter(color: .gray)))
@@ -25,7 +25,7 @@ class WordViewModel: ObservableObject {
         guess[index].setLetter(letter)
     }
     
-    private func getGuess() -> String {
+    func getGuess() -> String {
         var string = ""
         
         for letter in guess {
@@ -36,14 +36,17 @@ class WordViewModel: ObservableObject {
     }
     
     func makeGuess() -> Bool {
-        if getGuess() == correctWord {
+        if getGuess() == correctAnswer {
+            for letter in guess {
+                letter.setColor(.green)
+            }
             return true
         }
         
         for (i, letter) in guess.enumerated() {
-            if letter.character == String(correctWord[i]) {
+            if letter.character == String(correctAnswer[i]) {
                 letter.setColor(.green)
-            } else if correctWord.contains(letter.character) {
+            } else if correctAnswer.contains(letter.character) {
                 letter.setColor(.yellow)
             }
         }
