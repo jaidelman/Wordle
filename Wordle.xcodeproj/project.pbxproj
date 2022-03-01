@@ -19,6 +19,7 @@
 		F02AA8BE27CDA7F70048E442 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8BD27CDA7F70048E442 /* Alphabet.swift */; };
 		F02AA8C027CDE38E0048E442 /* WinnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8BF27CDE38D0048E442 /* WinnerViewModel.swift */; };
 		F02AA8C227CDE3B90048E442 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8C127CDE3B90048E442 /* Winner.swift */; };
+		F02AA8C427CDE64A0048E442 /* WordBank.txt in Resources */ = {isa = PBXBuildFile; fileRef = F02AA8C327CDE64A0048E442 /* WordBank.txt */; };
 		F074579D27CC728800C55FF7 /* RectangularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074579C27CC728800C55FF7 /* RectangularButton.swift */; };
 		F07457A127CC787600C55FF7 /* AlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A027CC787600C55FF7 /* AlphabetView.swift */; };
 		F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */; };
@@ -46,6 +47,7 @@
 		F02AA8BD27CDA7F70048E442 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		F02AA8BF27CDE38D0048E442 /* WinnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewModel.swift; sourceTree = "<group>"; };
 		F02AA8C127CDE3B90048E442 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
+		F02AA8C327CDE64A0048E442 /* WordBank.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = WordBank.txt; sourceTree = "<group>"; };
 		F074579C27CC728800C55FF7 /* RectangularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularButton.swift; sourceTree = "<group>"; };
 		F07457A027CC787600C55FF7 /* AlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetView.swift; sourceTree = "<group>"; };
 		F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		F0F6469527CBF4740026B353 /* Wordle */ = {
 			isa = PBXGroup;
 			children = (
+				F02AA8C327CDE64A0048E442 /* WordBank.txt */,
 				F02AA8B627CDA5D00048E442 /* Models */,
 				F074579B27CC727C00C55FF7 /* Components */,
 				F02788D927CC2E9800EB1F19 /* Extensions */,
@@ -227,6 +230,7 @@
 			files = (
 				F0F6469E27CBF4790026B353 /* Preview Assets.xcassets in Resources */,
 				F0F6469B27CBF4790026B353 /* Assets.xcassets in Resources */,
+				F02AA8C427CDE64A0048E442 /* WordBank.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
