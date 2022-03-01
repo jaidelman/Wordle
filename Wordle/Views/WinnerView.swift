@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct WinnerView: View {
-    private let width = UIScreen.main.bounds.width/1.2
-    private let height = UIScreen.main.bounds.height/4
-    let numberOfGuesses: Int
+    @StateObject var viewModel: WinnerViewModel
     
     var body: some View {
         VStack {
             Spacer()
-            Text("You won in \(numberOfGuesses) \(numberOfGuesses == 1 ? "guess" : "guesses")!")
+            Text("You won in \(viewModel.numGuesses) \(viewModel.numGuesses == 1 ? "guess" : "guesses")!")
+                .foregroundColor(.textColor)
             Spacer()
             Button("Play Again") {
                 
@@ -28,16 +27,17 @@ struct WinnerView: View {
                 Color.winner.cornerRadius(10)
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.borderColor, lineWidth: 2)
-                    .frame(width: width, height: height)
+                    .frame(width: viewModel.width, height: viewModel.height)
             }.padding()
         )
-        .frame(width: width, height: height)
+        .frame(width: viewModel.width, height: viewModel.height)
         .opacity(0.95)
     }
 }
 
 struct WinnerView_Previews: PreviewProvider {
     static var previews: some View {
-        WinnerView(numberOfGuesses: 3)
+        let viewModel = WinnerViewModel(numberOfGuesses: 3)
+        WinnerView(viewModel: viewModel)
     }
 }

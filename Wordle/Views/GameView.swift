@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameView: View {
     @StateObject var viewModel: GameViewModel
+    
     @State var currentGuess: String = ""
     @State var showWin: Bool = false
     
@@ -16,8 +17,8 @@ struct GameView: View {
         ZStack {
             VStack(spacing: 30) {
                 Spacer()
-                ForEach(0 ..< viewModel.guesses.count, id: \.self) { i in
-                    WordView(viewModel: viewModel.guesses[i])
+                ForEach(0 ..< viewModel.guessesCount, id: \.self) { i in
+                    WordView(viewModel: viewModel.getGuessAtIndex(i))
                         .frame(maxWidth: .infinity)
                 }
                 
@@ -44,7 +45,8 @@ struct GameView: View {
             .padding()
             
             if showWin {
-                WinnerView(numberOfGuesses: viewModel.currentGuessNumber - 1)
+                let winnerViewModel = WinnerViewModel(numberOfGuesses: viewModel.currentGuessNumber - 1)
+                WinnerView(viewModel: winnerViewModel)
                     .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
             }
         }

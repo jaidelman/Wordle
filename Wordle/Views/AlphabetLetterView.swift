@@ -12,17 +12,17 @@ struct AlphabetLetterView: View {
     @Binding var currentGuessValue: String
     
     var body: some View {
-        LetterView(viewModel: viewModel, isForGuess: false)
+        LetterView(viewModel: viewModel)
             .onTapGesture {
-                if currentGuessValue.count <= WordViewModel.wordLength - 1 {
-                    currentGuessValue += self.viewModel.character
+                if currentGuessValue.count <= Word.wordLength - 1 {
+                    currentGuessValue += viewModel.character
                 }
             }
     }
 }
 
 struct AlphabetLetterView_Previews: PreviewProvider {
-    static let viewModel = LetterViewModel(letter: Letter(letter: "A", color: .gray))
+    static let viewModel = LetterViewModel(letter: Letter(letter: "A", color: .gray), isAlphabet: true)
                                                    
     static var previews: some View {
         AlphabetLetterView(viewModel: viewModel, currentGuessValue: Binding.constant("TEST"))

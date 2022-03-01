@@ -12,7 +12,7 @@ struct BackspaceView: View {
     @Binding var currentGuessValue: String
     
     var body: some View {
-        LetterView(viewModel: viewModel, isForGuess: false)
+        LetterView(viewModel: viewModel)
             .onTapGesture {
                 if currentGuessValue.count > 0 {
                     currentGuessValue.remove(at: currentGuessValue.index(before: currentGuessValue.endIndex))
@@ -22,7 +22,7 @@ struct BackspaceView: View {
 }
 
 struct BackspaceView_Previews: PreviewProvider {
-    static let viewModel = LetterViewModel(letter: Letter(letter: "A", color: .gray))
+    static let viewModel = LetterViewModel(letter: Letter(letter: "A", color: .gray), isAlphabet: true)
                                                    
     static var previews: some View {
         BackspaceView(viewModel: viewModel, currentGuessValue: Binding.constant("TEST"))

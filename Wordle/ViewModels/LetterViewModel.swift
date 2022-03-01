@@ -9,16 +9,18 @@ import Foundation
 import UIKit
 import SwiftUI
 
-struct Letter {
-    var letter: Character?
-    var color: Color
-}
-
 class LetterViewModel: ObservableObject {
     @Published private var letter: Letter
+
+    private var viewSideLength: CGFloat
+    private var viewFontSize: CGFloat
+    private var viewCornerRadius: CGFloat
     
-    init(letter: Letter) {
+    init(letter: Letter, isAlphabet: Bool) {
         self.letter = letter
+        self.viewSideLength = isAlphabet ? UIScreen.main.bounds.width/10 : UIScreen.main.bounds.width/6
+        self.viewFontSize = isAlphabet ? 30 : 40
+        self.viewCornerRadius = isAlphabet ? 8 : 0
     }
     
     var character: String {
@@ -31,6 +33,18 @@ class LetterViewModel: ObservableObject {
     
     var color: Color {
         return letter.color
+    }
+    
+    var sideLength: CGFloat {
+        return viewSideLength
+    }
+    
+    var fontSize: CGFloat {
+        return viewFontSize
+    }
+    
+    var cornerRadius: CGFloat {
+        return viewCornerRadius
     }
     
     func setLetter(_ letter: Character?) {

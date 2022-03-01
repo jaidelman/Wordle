@@ -13,6 +13,12 @@
 		F02AA8AD27CD4F200048E442 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8AC27CD4F200048E442 /* WinnerView.swift */; };
 		F02AA8AF27CD5F680048E442 /* AnyTransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8AE27CD5F680048E442 /* AnyTransitionExtension.swift */; };
 		F02AA8B127CD714C0048E442 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8B027CD714C0048E442 /* ColorExtension.swift */; };
+		F02AA8B827CDA5E40048E442 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8B727CDA5E40048E442 /* Letter.swift */; };
+		F02AA8BA27CDA60B0048E442 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8B927CDA60B0048E442 /* Word.swift */; };
+		F02AA8BC27CDA7480048E442 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8BB27CDA7480048E442 /* Game.swift */; };
+		F02AA8BE27CDA7F70048E442 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8BD27CDA7F70048E442 /* Alphabet.swift */; };
+		F02AA8C027CDE38E0048E442 /* WinnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8BF27CDE38D0048E442 /* WinnerViewModel.swift */; };
+		F02AA8C227CDE3B90048E442 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AA8C127CDE3B90048E442 /* Winner.swift */; };
 		F074579D27CC728800C55FF7 /* RectangularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074579C27CC728800C55FF7 /* RectangularButton.swift */; };
 		F07457A127CC787600C55FF7 /* AlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A027CC787600C55FF7 /* AlphabetView.swift */; };
 		F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */; };
@@ -34,6 +40,12 @@
 		F02AA8AC27CD4F200048E442 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		F02AA8AE27CD5F680048E442 /* AnyTransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionExtension.swift; sourceTree = "<group>"; };
 		F02AA8B027CD714C0048E442 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		F02AA8B727CDA5E40048E442 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		F02AA8B927CDA60B0048E442 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		F02AA8BB27CDA7480048E442 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F02AA8BD27CDA7F70048E442 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
+		F02AA8BF27CDE38D0048E442 /* WinnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewModel.swift; sourceTree = "<group>"; };
+		F02AA8C127CDE3B90048E442 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		F074579C27CC728800C55FF7 /* RectangularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularButton.swift; sourceTree = "<group>"; };
 		F07457A027CC787600C55FF7 /* AlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetView.swift; sourceTree = "<group>"; };
 		F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetViewModel.swift; sourceTree = "<group>"; };
@@ -70,6 +82,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F02AA8B627CDA5D00048E442 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F02AA8BD27CDA7F70048E442 /* Alphabet.swift */,
+				F02AA8B727CDA5E40048E442 /* Letter.swift */,
+				F02AA8BB27CDA7480048E442 /* Game.swift */,
+				F02AA8C127CDE3B90048E442 /* Winner.swift */,
+				F02AA8B927CDA60B0048E442 /* Word.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F074579B27CC727C00C55FF7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +121,7 @@
 		F0F6469527CBF4740026B353 /* Wordle */ = {
 			isa = PBXGroup;
 			children = (
+				F02AA8B627CDA5D00048E442 /* Models */,
 				F074579B27CC727C00C55FF7 /* Components */,
 				F02788D927CC2E9800EB1F19 /* Extensions */,
 				F0F646A927CBF5B10026B353 /* ViewModels */,
@@ -137,6 +162,7 @@
 				F0F646B027CC04250026B353 /* GameViewModel.swift */,
 				F0F646AC27CBF5D90026B353 /* LetterViewModel.swift */,
 				F0F646AA27CBF5BC0026B353 /* WordViewModel.swift */,
+				F02AA8BF27CDE38D0048E442 /* WinnerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -217,12 +243,18 @@
 				F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */,
 				F02AA8A527CC86300048E442 /* AlphabetLetterView.swift in Sources */,
 				F0F646AB27CBF5BC0026B353 /* WordViewModel.swift in Sources */,
+				F02AA8C227CDE3B90048E442 /* Winner.swift in Sources */,
+				F02AA8BE27CDA7F70048E442 /* Alphabet.swift in Sources */,
 				F02AA8AF27CD5F680048E442 /* AnyTransitionExtension.swift in Sources */,
 				F074579D27CC728800C55FF7 /* RectangularButton.swift in Sources */,
+				F02AA8C027CDE38E0048E442 /* WinnerViewModel.swift in Sources */,
 				F0F646A527CBF5830026B353 /* LetterView.swift in Sources */,
 				F0F646AD27CBF5D90026B353 /* LetterViewModel.swift in Sources */,
+				F02AA8B827CDA5E40048E442 /* Letter.swift in Sources */,
+				F02AA8BA27CDA60B0048E442 /* Word.swift in Sources */,
 				F02AA8A927CC9C190048E442 /* BackspaceView.swift in Sources */,
 				F02AA8B127CD714C0048E442 /* ColorExtension.swift in Sources */,
+				F02AA8BC27CDA7480048E442 /* Game.swift in Sources */,
 				F0F6469727CBF4740026B353 /* WordleApp.swift in Sources */,
 				F0F646AF27CC040E0026B353 /* GameView.swift in Sources */,
 				F02788DB27CC2EA700EB1F19 /* StringProtocolExtension.swift in Sources */,

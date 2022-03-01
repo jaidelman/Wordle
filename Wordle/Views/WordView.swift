@@ -12,8 +12,8 @@ struct WordView: View {
     
     var body: some View {
         HStack {
-            ForEach(0 ..< viewModel.guess.count, id: \.self) { i in
-                LetterView(viewModel: viewModel.guess[i], isForGuess: true)
+            ForEach(0 ..< viewModel.guessCount, id: \.self) { i in
+                LetterView(viewModel: viewModel.getLetterViewModelAtIndex(i))
                     .frame(maxWidth: .infinity)
             }
         }

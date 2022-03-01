@@ -23,10 +23,10 @@ struct AlphabetView: View {
     
     var body: some View {
         LazyVGrid(columns: rows, alignment: .center, spacing: 30) {
-            ForEach(0 ..< viewModel.letterViewModels.count, id: \.self) { i in
-                AlphabetLetterView(viewModel: viewModel.letterViewModels[i], currentGuessValue: $currentGuessValue)
+            ForEach(0 ..< viewModel.lettersCount, id: \.self) { i in
+                AlphabetLetterView(viewModel: viewModel.getLetterViewModelAtIndex(i), currentGuessValue: $currentGuessValue)
             }
-            BackspaceView(viewModel: LetterViewModel(letter: Letter(letter: "🔙", color: .backspace)), currentGuessValue: $currentGuessValue)
+            BackspaceView(viewModel: LetterViewModel(letter: Letter(letter: "🔙", color: .backspace), isAlphabet: true), currentGuessValue: $currentGuessValue)
         }
     }
 }

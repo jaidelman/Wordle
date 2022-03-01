@@ -9,20 +9,27 @@ import Foundation
 import SwiftUI
 
 class AlphabetViewModel: ObservableObject {
-    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    @Published var letterViewModels: [LetterViewModel] = []
+    @Published var alphabet: Alphabet = Alphabet()
     
     init() {
-        for letter in letters {
+        for letter in alphabet.letters {
             let letterObj = Letter(letter: letter, color: .gray)
-            let letterViewModel = LetterViewModel(letter: letterObj)
-            letterViewModels.append(letterViewModel)
+            let letterViewModel = LetterViewModel(letter: letterObj, isAlphabet: true)
+            alphabet.letterViewModels.append(letterViewModel)
         }
+    }
+    
+    var lettersCount: Int {
+        return alphabet.letterViewModels.count
+    }
+    
+    func getLetterViewModelAtIndex(_ index: Int) -> LetterViewModel {
+        return alphabet.letterViewModels[index]
     }
     
     func makeGuess(guess: String, correctAnswer: String) {
         for (i, character) in guess.enumerated() {
-            for letter in letterViewModels {
+            for letter in alphabet.letterViewModels {
                 
                 if String(character) == letter.character {
                     if letter.character == String(correctAnswer[i]) {
