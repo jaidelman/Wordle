@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
+    @EnvironmentObject var rootViewModel: RootViewModel
     @StateObject var viewModel: GameViewModel
     
     @State var currentGuess: String = ""
@@ -47,7 +48,7 @@ struct GameView: View {
             if showWin {
                 let winnerViewModel = WinnerViewModel(numberOfGuesses: viewModel.currentGuessNumber - 1)
                 WinnerView(viewModel: winnerViewModel)
-                    .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+                    .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide)).environmentObject(rootViewModel)
             }
         }
     }

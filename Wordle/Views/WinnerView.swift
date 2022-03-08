@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct WinnerView: View {
+    @EnvironmentObject var rootViewModel: RootViewModel
     @StateObject var viewModel: WinnerViewModel
     
     var body: some View {
         VStack {
             Spacer()
             Text("You won in \(viewModel.numGuesses) \(viewModel.numGuesses == 1 ? "guess" : "guesses")!")
-                .foregroundColor(.textColor)
+                .foregroundColor(.black)
             Spacer()
             Button("Play Again") {
-                
+                rootViewModel.updateGameViewModel()
             }
             .buttonStyle(RectangularButton(color: .winnerButton, textColor: .textColor, borderColor: .black))
             Spacer()
