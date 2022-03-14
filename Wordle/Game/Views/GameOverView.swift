@@ -1,5 +1,5 @@
 //
-//  WinnerView.swift
+//  GameOverView.swift
 //  Wordle
 //
 //  Created by Josh Aidelman on 2022-02-28.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct WinnerView: View {
+struct GameOverView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
-    @StateObject var viewModel: WinnerViewModel
+    @StateObject var viewModel: GameOverViewModel
     
     var body: some View {
         VStack {
             Spacer()
-            Text("You won in \(viewModel.numGuesses) \(viewModel.numGuesses == 1 ? "guess" : "guesses")!")
+            Text(viewModel.text)
                 .foregroundColor(.black)
             Spacer()
             Button("Continue") {
@@ -36,9 +36,10 @@ struct WinnerView: View {
     }
 }
 
-struct WinnerView_Previews: PreviewProvider {
+struct GameOverView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = WinnerViewModel(numberOfGuesses: 3)
-        WinnerView(viewModel: viewModel)
+        let viewModel = GameOverViewModel(game: Game())
+        
+        GameOverView(viewModel: viewModel)
     }
 }

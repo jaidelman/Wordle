@@ -12,7 +12,7 @@ struct GameView: View {
     @StateObject var viewModel: GameViewModel
     
     @State var currentGuess: String = ""
-    @State var showWin: Bool = false
+    @State var gameOver: Bool = false
     
     var body: some View {
         ZStack {
@@ -31,23 +31,27 @@ struct GameView: View {
                 
                 
                 Button("Submit") {
-                    if currentGuess.count == 5 && viewModel.currentGuessNumber < 6 {
+                    if currentGuess.count == 5 {
                         viewModel.submitGuess()
-                        self.currentGuess = ""
+                        
+                        if viewModel.currentGuessNumber <= 6 {
+                            self.currentGuess = ""
+                        }
                     }
                 }
                 .buttonStyle(RectangularButton(color: .correctGreen))
-                .onChange(of: viewModel.correctGuess) { _ in
+                .onChange(of: viewModel.correctGuess || viewModel.currentGuessNumber > 6) { _ in
                     withAnimation(.linear(duration: 0.8)) {
-                        showWin = true
+                        gameOver = true
                     }
                 }
             }
             .padding()
             
-            if showWin {
-                let winnerViewModel = WinnerViewModel(numberOfGuesses: viewModel.currentGuessNumber - 1)
-                WinnerView(viewModel: winnerViewModel)
+            if gameOver {
+                let gameOverViewModel = GameOverViewModel(game: viewModel.game)
+                
+                GameOverView(viewModel: gameOverViewModel)
                     .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide)).environmentObject(rootViewModel)
             }
         }

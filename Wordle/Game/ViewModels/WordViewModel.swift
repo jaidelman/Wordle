@@ -8,7 +8,7 @@
 import Foundation
 
 class WordViewModel: ObservableObject {
-    private let correctAnswer: String
+    let correctAnswer: String
     @Published var word: Word = Word()
     
     init(correctAnswer: String) {

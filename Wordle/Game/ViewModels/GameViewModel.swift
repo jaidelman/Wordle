@@ -10,7 +10,7 @@ import SwiftUI
 
 class GameViewModel: ObservableObject {
     private let correctAnswer: String
-    @Published private var game: Game = Game()
+    @Published var game: Game = Game()
     
     init() {
         self.correctAnswer = GameViewModel.chooseCorrectWordForGame()
