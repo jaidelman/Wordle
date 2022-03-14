@@ -5,5 +5,4 @@ This is an iPhone version of the popular game [Wordle](https://www.nytimes.com/g
 # Example
 Light Mode            |  Dark Mode
 :-------------------------:|:-------------------------:
-![Wordle](https://user-images.githubusercontent.com/32146689/158239013-2b001477-16c4-4939-81da-8652e99c88a6.gif)  |  ![wordle-dark](https://user-images.githubusercontent.com/32146689/156064493-340a64c7-b89b-4e30-b220-40154b123d43.gif)
-
+![wordle](https://user-images.githubusercontent.com/32146689/158240682-f1c7a9cc-1ea1-4ab5-8dc8-4e7de5600397.gif) | ![wordle-dark](https://user-images.githubusercontent.com/32146689/158240946-3b6b4adb-3071-4deb-963b-175eb9771448.gif)
