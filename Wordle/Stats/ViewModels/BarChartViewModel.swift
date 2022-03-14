@@ -17,9 +17,11 @@ class BarChartViewModel: ObservableObject {
     }
     
     func animate() {
-        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
             if self.percent < self.maxPercent {
                 self.percent += 0.01
+            } else {
+                timer.invalidate()
             }
         }
     }
