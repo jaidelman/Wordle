@@ -9,41 +9,46 @@ import SwiftUI
 
 struct PieChartView: View {
     let viewModel: PieChartViewModel
+    @State var selectedIndex: Int? = nil
     
     var body: some View {
-        VStack(alignment: .center) {
-            Text(viewModel.title)
-                .font(.system(size: 30, weight: .bold))
+        VStack {
             ZStack {
-                ZStack  {
-                    ForEach( 0 ..< viewModel.data.count ){ i in
-                        let sliceViewModel = viewModel.pieSlices[i]
-                        PieChartSliceView(viewModel: sliceViewModel)
+                ForEach(0 ..< viewModel.slices.count) { i in
+                        Circle()
+                            .trim(from: i == 0 ? 0.0 : viewModel.endTrims[i-1], to: viewModel.endTrims[i])
+                            .stroke(viewModel.slices[i].color,lineWidth: 50)
+                            .scaleEffect(i == selectedIndex ? 1.1 : 1.0)
+                            .animation(.spring(), value: selectedIndex)
+                            .onTapGesture {
+                                selectedIndex = i
+                            }
+                }
+                .frame(width: 200, height: 250)
+
+                if let selectedIndex = selectedIndex {
+                    Text("\(viewModel.slices[selectedIndex].value)")
+                        .font(.system(size: 30, weight: .bold))
+                }
+            }
+            Text("# of Guesses")
+            HStack {
+                ForEach( 0 ..< viewModel.slices.count/2 ){ i in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 0)
+                            .fill(viewModel.colors[i])
+                            .frame(width: 50, height: 50)
+                        Text("\(i+1)")
                     }
                 }
             }
-            .offset(x: 80)
-            
-            Text("# of Guesses")
-            VStack {
-                HStack {
-                    ForEach( 0 ..< viewModel.data.count/2 ){ i in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 0)
-                                .fill(viewModel.pieSlices[i].slice.color)
-                                .frame(width: 50, height: 50)
-                            Text(viewModel.pieSlices[i].slice.label)
-                        }
-                    }
-                }
-                HStack {
-                    ForEach( viewModel.data.count/2 ..< viewModel.data.count ){ i in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 0)
-                                .fill(viewModel.pieSlices[i].slice.color)
-                                .frame(width: 50, height: 50)
-                            Text(viewModel.pieSlices[i].slice.label)
-                        }
+            HStack {
+                ForEach( viewModel.slices.count/2 ..< viewModel.slices.count ){ i in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 0)
+                            .fill(viewModel.colors[i])
+                            .frame(width: 50, height: 50)
+                        Text("\(i+1)")
                     }
                 }
             }
@@ -54,8 +59,6 @@ struct PieChartView: View {
 struct PieChartView_Previews: PreviewProvider {
 
     static var previews: some View {
-        GeometryReader { geometry in
-            PieChartView(viewModel: PieChartViewModel(center: CGPoint(x: geometry.frame(in: .local).midX, y: geometry.frame(in:  .local).midY)))
-        }
+        PieChartView(viewModel: PieChartViewModel())
     }
 }

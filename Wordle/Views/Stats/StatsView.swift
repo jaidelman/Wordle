@@ -13,12 +13,17 @@ struct StatsView: View {
     
     var body: some View {
         VStack {
+            Text("Stats")
+                .font(.system(size: 30, weight: .bold))
             Spacer()
-            GeometryReader { geometry in
-                PieChartView(viewModel: PieChartViewModel(center: CGPoint(x: geometry.frame(in: .local).midX, y: geometry.frame(in:  .local).midY)))
-            }
+            Text("Wins: 10")
+            BarChartView(percent: 0.8)
+            Text("Games: 12")
+            Spacer()
+            PieChartView(viewModel: PieChartViewModel())
+            Spacer()
             Button("Play Again") {
-                rootViewModel.updateGameViewModel()
+                rootViewModel.updateCurrentView(.game)
             }
             .buttonStyle(RectangularButton(color: .winnerButton, textColor: .textColor, borderColor: .black))
             Spacer()

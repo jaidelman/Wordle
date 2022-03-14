@@ -10,10 +10,7 @@
 		F0028F6A27DE96E70005AE1F /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F6927DE96E70005AE1F /* StatsView.swift */; };
 		F0028F6C27DE96F20005AE1F /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F6B27DE96F20005AE1F /* StatsViewModel.swift */; };
 		F0028F6E27DE97740005AE1F /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F6D27DE97740005AE1F /* Stats.swift */; };
-		F0028F7027DE99640005AE1F /* PieChartSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F6F27DE99640005AE1F /* PieChartSliceView.swift */; };
-		F0028F7227DE996D0005AE1F /* PieChartSliceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F7127DE996D0005AE1F /* PieChartSliceViewModel.swift */; };
-		F0028F7427DE99760005AE1F /* PieChartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F7327DE99760005AE1F /* PieChartSlice.swift */; };
-		F0028F7E27DE9BFB0005AE1F /* PieChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F7D27DE9BFB0005AE1F /* PieChartData.swift */; };
+		F0028F7E27DE9BFB0005AE1F /* PieChartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F7D27DE9BFB0005AE1F /* PieChartSlice.swift */; };
 		F0028F8027DE9C1A0005AE1F /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F7F27DE9C1A0005AE1F /* PieChartViewModel.swift */; };
 		F0028F8227DE9CD80005AE1F /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F8127DE9CD80005AE1F /* PieChartView.swift */; };
 		F019F57C27D7C9D700CB4A2A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019F57B27D7C9D700CB4A2A /* RootView.swift */; };
@@ -36,6 +33,7 @@
 		F07457A327CC791D00C55FF7 /* AlphabetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */; };
 		F0B681A427D7C41800F9A1F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B681A327D7C41800F9A1F7 /* HomeView.swift */; };
 		F0B681A627D7C47C00F9A1F7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B681A527D7C47C00F9A1F7 /* HomeViewModel.swift */; };
+		F0E7870D27DEC500008FC96C /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7870C27DEC500008FC96C /* BarChartView.swift */; };
 		F0F6469727CBF4740026B353 /* WordleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6469627CBF4740026B353 /* WordleApp.swift */; };
 		F0F6469B27CBF4790026B353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6469A27CBF4790026B353 /* Assets.xcassets */; };
 		F0F6469E27CBF4790026B353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6469D27CBF4790026B353 /* Preview Assets.xcassets */; };
@@ -51,10 +49,7 @@
 		F0028F6927DE96E70005AE1F /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		F0028F6B27DE96F20005AE1F /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		F0028F6D27DE97740005AE1F /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
-		F0028F6F27DE99640005AE1F /* PieChartSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSliceView.swift; sourceTree = "<group>"; };
-		F0028F7127DE996D0005AE1F /* PieChartSliceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSliceViewModel.swift; sourceTree = "<group>"; };
-		F0028F7327DE99760005AE1F /* PieChartSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSlice.swift; sourceTree = "<group>"; };
-		F0028F7D27DE9BFB0005AE1F /* PieChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartData.swift; sourceTree = "<group>"; };
+		F0028F7D27DE9BFB0005AE1F /* PieChartSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSlice.swift; sourceTree = "<group>"; };
 		F0028F7F27DE9C1A0005AE1F /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 		F0028F8127DE9CD80005AE1F /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		F019F57B27D7C9D700CB4A2A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -77,6 +72,7 @@
 		F07457A227CC791D00C55FF7 /* AlphabetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetViewModel.swift; sourceTree = "<group>"; };
 		F0B681A327D7C41800F9A1F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0B681A527D7C47C00F9A1F7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0E7870C27DEC500008FC96C /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		F0F6469327CBF4740026B353 /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F6469627CBF4740026B353 /* WordleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleApp.swift; sourceTree = "<group>"; };
 		F0F6469A27CBF4790026B353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				F0028F6927DE96E70005AE1F /* StatsView.swift */,
-				F0028F6F27DE99640005AE1F /* PieChartSliceView.swift */,
 				F0028F8127DE9CD80005AE1F /* PieChartView.swift */,
+				F0E7870C27DEC500008FC96C /* BarChartView.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -149,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				F0028F6B27DE96F20005AE1F /* StatsViewModel.swift */,
-				F0028F7127DE996D0005AE1F /* PieChartSliceViewModel.swift */,
 				F0028F7F27DE9C1A0005AE1F /* PieChartViewModel.swift */,
 			);
 			path = Stats;
@@ -168,8 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F0028F6D27DE97740005AE1F /* Stats.swift */,
-				F0028F7327DE99760005AE1F /* PieChartSlice.swift */,
-				F0028F7D27DE9BFB0005AE1F /* PieChartData.swift */,
+				F0028F7D27DE9BFB0005AE1F /* PieChartSlice.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -358,9 +352,8 @@
 				F0028F6E27DE97740005AE1F /* Stats.swift in Sources */,
 				F02AA8AF27CD5F680048E442 /* AnyTransitionExtension.swift in Sources */,
 				F074579D27CC728800C55FF7 /* RectangularButton.swift in Sources */,
-				F0028F7E27DE9BFB0005AE1F /* PieChartData.swift in Sources */,
+				F0028F7E27DE9BFB0005AE1F /* PieChartSlice.swift in Sources */,
 				F02AA8C027CDE38E0048E442 /* WinnerViewModel.swift in Sources */,
-				F0028F7427DE99760005AE1F /* PieChartSlice.swift in Sources */,
 				F0F646A527CBF5830026B353 /* LetterView.swift in Sources */,
 				F0028F6C27DE96F20005AE1F /* StatsViewModel.swift in Sources */,
 				F0F646AD27CBF5D90026B353 /* LetterViewModel.swift in Sources */,
@@ -371,14 +364,13 @@
 				F02AA8B127CD714C0048E442 /* ColorExtension.swift in Sources */,
 				F02AA8BC27CDA7480048E442 /* Game.swift in Sources */,
 				F0F6469727CBF4740026B353 /* WordleApp.swift in Sources */,
-				F0028F7027DE99640005AE1F /* PieChartSliceView.swift in Sources */,
 				F0B681A627D7C47C00F9A1F7 /* HomeViewModel.swift in Sources */,
 				F0F646AF27CC040E0026B353 /* GameView.swift in Sources */,
 				F02788DB27CC2EA700EB1F19 /* StringProtocolExtension.swift in Sources */,
 				F0B681A427D7C41800F9A1F7 /* HomeView.swift in Sources */,
 				F0F646B127CC04250026B353 /* GameViewModel.swift in Sources */,
 				F019F57C27D7C9D700CB4A2A /* RootView.swift in Sources */,
-				F0028F7227DE996D0005AE1F /* PieChartSliceViewModel.swift in Sources */,
+				F0E7870D27DEC500008FC96C /* BarChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

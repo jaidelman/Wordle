@@ -14,6 +14,7 @@ class GameViewModel: ObservableObject {
     
     init() {
         self.correctAnswer = GameViewModel.chooseCorrectWordForGame()
+        print(self.correctAnswer)
         for _ in 0 ..< 6 {
             self.game.guesses.append(WordViewModel(correctAnswer: correctAnswer))
         }

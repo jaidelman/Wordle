@@ -9,44 +9,32 @@ import Foundation
 import SwiftUI
 
 class PieChartViewModel {
-    var data: [PieChartData] = []
-    let title: String = "Stats"
-    let colors = [Color.orange, Color.red, Color.yellow, Color.green, Color.blue, Color.purple]
-    let center: CGPoint
+    var slices: [PieChartSlice] = []
+    var endTrims: [CGFloat] = []
+    let colors: [Color] = [Color.orange, Color.red, Color.yellow, Color.green, Color.blue, Color.purple]
     
-    init(center: CGPoint) {
-        self.center = center
-        
+    init() {
         //READ DATA
-        data.append(PieChartData(label: "1", value: 1))
-        data.append(PieChartData(label: "2", value: 2))
-        data.append(PieChartData(label: "3", value: 3))
-        data.append(PieChartData(label: "4", value: 4))
-        data.append(PieChartData(label: "5", value: 5))
-        data.append(PieChartData(label: "6", value: 6))
+        slices.append(PieChartSlice(label: "1", value: 1, color: colors[0]))
+        slices.append(PieChartSlice(label: "2", value: 2, color: colors[1]))
+        slices.append(PieChartSlice(label: "3", value: 3, color: colors[2]))
+        slices.append(PieChartSlice(label: "4", value: 4, color: colors[3]))
+        slices.append(PieChartSlice(label: "5", value: 5, color: colors[4]))
+        slices.append(PieChartSlice(label: "6", value: 6, color: colors[5]))
+        for (i, _) in slices.enumerated() {
+            self.endTrims.append(getEndTrimAtIndex(i))
+        }
     }
     
-    func normalizedValue(index: Int) -> Double {
-        var total = 0.0
-        self.data.forEach { data in
-            total += data.value
+    func getEndTrimAtIndex(_ index: Int) -> CGFloat {
+        var total = 0
+
+        for i in 0 ..< slices.count {
+            total += slices[i].value
         }
-        return data[index].value/total
+
+        let lastTrim: CGFloat = index != 0 ? endTrims[index - 1] : 0.0
+
+        return CGFloat(slices[index].value) * (CGFloat(100)/CGFloat(total)/CGFloat(100)) + lastTrim
     }
-    
-    var pieSlices: [PieChartSliceViewModel] {
-        var slices = [PieChartSliceViewModel]()
-        data.enumerated().forEach {(index, data) in
-            let value = normalizedValue(index: index)
-            if slices.isEmpty    {
-                slices.append(PieChartSliceViewModel(center: center, startDegree: 0, endDegree: value * 360, color: colors[index], label: data.label))
-            } else {
-                if let lastSlice = slices.last {
-                    slices.append(PieChartSliceViewModel(center: center, startDegree: lastSlice.slice.endDegree, endDegree: (value * 360 + lastSlice.slice.endDegree), color: colors[index], label: data.label))
-                }
-            }
-            
-        }
-        return slices
-     }
 }

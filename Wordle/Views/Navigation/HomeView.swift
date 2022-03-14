@@ -24,7 +24,7 @@ struct HomeView: View {
             }
             Spacer()
             Button("Start Game") {
-                rootViewModel.updateCurrentView(.newGame)
+                rootViewModel.updateCurrentView(.game)
             }
             .buttonStyle(RectangularButton(color: .correctGreen))
             Spacer()

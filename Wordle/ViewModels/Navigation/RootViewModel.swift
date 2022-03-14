@@ -12,7 +12,7 @@ import SwiftUI
 enum ViewType {
     case home
     case game
-    case newGame
+    case stats
 }
 
 class RootViewModel: ObservableObject {
@@ -20,16 +20,10 @@ class RootViewModel: ObservableObject {
     @Published var gameViewModel = GameViewModel()
     
     func updateCurrentView(_ viewType: ViewType) {
-        self.currentView = viewType
-    }
-    
-    func updateGameViewModel() {
-        self.gameViewModel = GameViewModel()
-        
-        if currentView == .game {
-            updateCurrentView(.newGame)
-        } else {
-            updateCurrentView(.game)
+        if viewType == .game {
+            self.gameViewModel = GameViewModel()
         }
+        
+        self.currentView = viewType
     }
 }

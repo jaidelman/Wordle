@@ -30,7 +30,4 @@ class StatsViewModel: ObservableObject {
         return stats.wins
     }
     
-    func getPieChartViewModel(center: CGPoint) -> PieChartViewModel {
-        return PieChartViewModel(center: center)
-    }
 }

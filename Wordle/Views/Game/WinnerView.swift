@@ -17,8 +17,8 @@ struct WinnerView: View {
             Text("You won in \(viewModel.numGuesses) \(viewModel.numGuesses == 1 ? "guess" : "guesses")!")
                 .foregroundColor(.black)
             Spacer()
-            Button("Play Again") {
-                rootViewModel.updateGameViewModel()
+            Button("Continue") {
+                rootViewModel.updateCurrentView(.stats)
             }
             .buttonStyle(RectangularButton(color: .winnerButton, textColor: .textColor, borderColor: .black))
             Spacer()

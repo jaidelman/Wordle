@@ -21,8 +21,8 @@ struct RootView: View {
             HomeView().environmentObject(viewModel)
         case .game:
             GameView(viewModel: viewModel.gameViewModel).environmentObject(viewModel)
-        case .newGame:
-            GameView(viewModel: viewModel.gameViewModel).environmentObject(viewModel)
+        case .stats:
+            StatsView().environmentObject(viewModel)
         }
     }
 }
