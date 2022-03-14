@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BarChartView: View {
-    let percent: CGFloat
+    @StateObject var viewModel: BarChartViewModel
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -22,14 +22,17 @@ struct BarChartView: View {
                 .frame(width: 2, height: 20)
                 .offset(x: UIScreen.main.bounds.width * 0.8)
             Color.correctGreen
-                .frame(width: (UIScreen.main.bounds.width * 0.8 * percent) - 2, height: 12)
+                .frame(width: (UIScreen.main.bounds.width * 0.8 * viewModel.percent), height: 12)
                 .offset(x: 2)
+        }
+        .onAppear {
+            viewModel.animate()
         }
     }
 }
 
 struct BarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        BarChartView(percent: 0.8)
+        BarChartView(viewModel: BarChartViewModel(percent: 0.8))
     }
 }

@@ -31,7 +31,9 @@ struct PieChartView: View {
                         .font(.system(size: 30, weight: .bold))
                 }
             }
+            .padding(.bottom, 20)
             Text("# of Guesses")
+                .foregroundColor(.black)
             HStack {
                 ForEach( 0 ..< viewModel.slices.count/2 ){ i in
                     ZStack {
@@ -39,6 +41,7 @@ struct PieChartView: View {
                             .fill(viewModel.colors[i])
                             .frame(width: 50, height: 50)
                         Text("\(i+1)")
+                            .foregroundColor(.black)
                     }
                 }
             }
@@ -49,6 +52,7 @@ struct PieChartView: View {
                             .fill(viewModel.colors[i])
                             .frame(width: 50, height: 50)
                         Text("\(i+1)")
+                            .foregroundColor(.black)
                     }
                 }
             }
@@ -59,6 +63,8 @@ struct PieChartView: View {
 struct PieChartView_Previews: PreviewProvider {
 
     static var previews: some View {
-        PieChartView(viewModel: PieChartViewModel())
+        let viewModel = PieChartViewModel()
+        
+        PieChartView(viewModel: viewModel)
     }
 }

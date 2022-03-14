@@ -15,10 +15,13 @@ struct StatsView: View {
         VStack {
             Text("Stats")
                 .font(.system(size: 30, weight: .bold))
+                .foregroundColor(.black)
             Spacer()
             Text("Wins: \(viewModel.numWins)")
-            BarChartView(percent: viewModel.winPercent)
+                .foregroundColor(.black)
+            BarChartView(viewModel: BarChartViewModel(percent: viewModel.winPercent))
             Text("Games: \(viewModel.numGames)")
+                .foregroundColor(.black)
             Spacer()
             PieChartView(viewModel: PieChartViewModel())
             Spacer()
@@ -29,12 +32,13 @@ struct StatsView: View {
             Spacer()
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(Color.textColor)
+        .background(Color.winner)
     }
 }
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
         StatsView()
+            //.preferredColorScheme(.dark)
     }
 }

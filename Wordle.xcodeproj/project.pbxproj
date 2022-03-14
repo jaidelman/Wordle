@@ -13,6 +13,7 @@
 		F0028F7E27DE9BFB0005AE1F /* PieChartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F7D27DE9BFB0005AE1F /* PieChartSlice.swift */; };
 		F0028F8027DE9C1A0005AE1F /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F7F27DE9C1A0005AE1F /* PieChartViewModel.swift */; };
 		F0028F8227DE9CD80005AE1F /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028F8127DE9CD80005AE1F /* PieChartView.swift */; };
+		F013A16627DFC06500E90F3A /* BarChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013A16527DFC06500E90F3A /* BarChartViewModel.swift */; };
 		F019F57C27D7C9D700CB4A2A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019F57B27D7C9D700CB4A2A /* RootView.swift */; };
 		F019F57E27D7D69F00CB4A2A /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019F57D27D7D69F00CB4A2A /* RootViewModel.swift */; };
 		F02788DB27CC2EA700EB1F19 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */; };
@@ -52,6 +53,7 @@
 		F0028F7D27DE9BFB0005AE1F /* PieChartSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSlice.swift; sourceTree = "<group>"; };
 		F0028F7F27DE9C1A0005AE1F /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 		F0028F8127DE9CD80005AE1F /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		F013A16527DFC06500E90F3A /* BarChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewModel.swift; sourceTree = "<group>"; };
 		F019F57B27D7C9D700CB4A2A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F019F57D27D7D69F00CB4A2A /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		F02788DA27CC2EA700EB1F19 /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				F0028F6B27DE96F20005AE1F /* StatsViewModel.swift */,
 				F0028F7F27DE9C1A0005AE1F /* PieChartViewModel.swift */,
+				F013A16527DFC06500E90F3A /* BarChartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				F02AA8BC27CDA7480048E442 /* Game.swift in Sources */,
 				F0F6469727CBF4740026B353 /* WordleApp.swift in Sources */,
 				F0B681A627D7C47C00F9A1F7 /* HomeViewModel.swift in Sources */,
+				F013A16627DFC06500E90F3A /* BarChartViewModel.swift in Sources */,
 				F0F646AF27CC040E0026B353 /* GameView.swift in Sources */,
 				F02788DB27CC2EA700EB1F19 /* StringProtocolExtension.swift in Sources */,
 				F0B681A427D7C41800F9A1F7 /* HomeView.swift in Sources */,

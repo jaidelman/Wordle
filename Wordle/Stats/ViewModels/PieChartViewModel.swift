@@ -11,7 +11,7 @@ import SwiftUI
 class PieChartViewModel {
     var slices: [PieChartSlice] = []
     var endTrims: [CGFloat] = []
-    let colors: [Color] = [Color.orange, Color.red, Color.yellow, Color.green, Color.blue, Color.purple]
+    let colors: [Color] = [.pieMaxGreen, .pieGreenYellow, .pieYellowGreen, .pieLightOrange, .pieDarkOrange, .pieRed]
     
     init() {
         let keys = UserDefaults.Keys.self
