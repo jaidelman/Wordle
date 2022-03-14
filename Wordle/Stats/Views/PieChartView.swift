@@ -29,6 +29,7 @@ struct PieChartView: View {
                 if let selectedIndex = selectedIndex {
                     Text("\(viewModel.slices[selectedIndex].value)")
                         .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.black)
                 }
             }
             .padding(.bottom, 20)

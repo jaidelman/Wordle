@@ -28,7 +28,7 @@ struct StatsView: View {
             Button("Play Again") {
                 rootViewModel.updateCurrentView(.game)
             }
-            .buttonStyle(RectangularButton(color: .winnerButton, textColor: .textColor, borderColor: .black))
+            .buttonStyle(RectangularButton(color: .correctGreen, textColor: .black, borderColor: .black))
             Spacer()
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -39,6 +39,6 @@ struct StatsView: View {
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
         StatsView()
-            //.preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }

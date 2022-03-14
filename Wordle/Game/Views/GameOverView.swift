@@ -20,7 +20,7 @@ struct GameOverView: View {
             Button("Continue") {
                 rootViewModel.updateCurrentView(.stats)
             }
-            .buttonStyle(RectangularButton(color: .winnerButton, textColor: .textColor, borderColor: .black))
+            .buttonStyle(RectangularButton(color: .correctGreen, textColor: .black, borderColor: .black))
             Spacer()
         }
         .background(
