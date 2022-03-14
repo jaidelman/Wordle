@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct PieChartSlice {
-    var label: String
     var value: Int
     var color: Color
 }

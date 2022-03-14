@@ -17,6 +17,40 @@ class GameOverViewModel: ObservableObject {
         self.game = game
     }
     
+    func updateUserStats() {
+        let defaults = UserDefaults.standard
+        let keys = UserDefaults.Keys.self
+        
+        let games = defaults.integer(forKey: keys.games)
+        defaults.set(games+1, forKey: keys.games)
+        
+        if game.correctGuess {
+            let wins = defaults.integer(forKey: keys.wins)
+            defaults.set(wins+1, forKey: keys.wins)
+            
+            let keyForNumGuesses: String
+            switch(numGuesses) {
+            case 1:
+                keyForNumGuesses = keys.oneGuess
+            case 2:
+                keyForNumGuesses = keys.twoGuess
+            case 3:
+                keyForNumGuesses = keys.threeGuess
+            case 4:
+                keyForNumGuesses = keys.fourGuess
+            case 5:
+                keyForNumGuesses = keys.fiveGuess
+            case 6:
+                keyForNumGuesses = keys.sixGuess
+            default:
+                keyForNumGuesses = ""
+            }
+            
+            let num = defaults.integer(forKey: keyForNumGuesses)
+            defaults.set(num+1, forKey: keyForNumGuesses)
+        }
+    }
+    
     var width: CGFloat {
         return viewWidth
     }
@@ -26,12 +60,12 @@ class GameOverViewModel: ObservableObject {
     }
     
     var numGuesses: Int {
-        return game.currentGuessNumber
+        return game.currentGuessNumber - 1
     }
     
     var text: String {
         if game.correctGuess {
-            return "You won in \(self.numGuesses - 1) \(self.numGuesses - 1 == 1 ? "guess" : "guesses")!"
+            return "You won in \(self.numGuesses) \(self.numGuesses == 1 ? "guess" : "guesses")!"
         } else {
             return "Good try! The correct answer was \(game.guesses[0].correctAnswer)"
         }

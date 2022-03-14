@@ -12,14 +12,12 @@ class StatsViewModel: ObservableObject {
     var stats: Stats
     
     init() {
-        let wins = 12
-        let games = 15
-        let guessStats = [2, 2, 2, 2, 2, 2]
-        self.stats = Stats(guessStats: guessStats, wins: wins, games: games)
-    }
-    
-    func getStatsForNumGuesses(_ numGuesses: Int) -> Int {
-        return stats.guessStats[numGuesses - 1]
+        let defaults = UserDefaults.standard
+        let keys = UserDefaults.Keys.self
+        
+        let wins = defaults.integer(forKey: keys.wins)
+        let games = defaults.integer(forKey: keys.games)
+        self.stats = Stats(wins: wins, games: games)
     }
     
     var numGames: Int {
@@ -28,6 +26,10 @@ class StatsViewModel: ObservableObject {
     
     var numWins: Int {
         return stats.wins
+    }
+    
+    var winPercent: CGFloat {
+        return CGFloat(stats.wins)/CGFloat(stats.games)
     }
     
 }

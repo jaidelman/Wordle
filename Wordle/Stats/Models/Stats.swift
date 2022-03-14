@@ -8,7 +8,6 @@
 import Foundation
 
 struct Stats {
-    var guessStats: [Int]
     var wins: Int
     var games: Int
 }

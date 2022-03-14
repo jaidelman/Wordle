@@ -53,6 +53,9 @@ struct GameView: View {
                 
                 GameOverView(viewModel: gameOverViewModel)
                     .transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide)).environmentObject(rootViewModel)
+                    .onAppear() {
+                        gameOverViewModel.updateUserStats()
+                    }
             }
         }
     }

@@ -14,16 +14,24 @@ class PieChartViewModel {
     let colors: [Color] = [Color.orange, Color.red, Color.yellow, Color.green, Color.blue, Color.purple]
     
     init() {
-        //READ DATA
-        slices.append(PieChartSlice(label: "1", value: 1, color: colors[0]))
-        slices.append(PieChartSlice(label: "2", value: 2, color: colors[1]))
-        slices.append(PieChartSlice(label: "3", value: 3, color: colors[2]))
-        slices.append(PieChartSlice(label: "4", value: 4, color: colors[3]))
-        slices.append(PieChartSlice(label: "5", value: 5, color: colors[4]))
-        slices.append(PieChartSlice(label: "6", value: 6, color: colors[5]))
+        let keys = UserDefaults.Keys.self
+        
+        slices.append(PieChartSlice(value: getNumWinsForKey(keys.oneGuess), color: colors[0]))
+        slices.append(PieChartSlice(value: getNumWinsForKey(keys.twoGuess), color: colors[1]))
+        slices.append(PieChartSlice(value: getNumWinsForKey(keys.threeGuess), color: colors[2]))
+        slices.append(PieChartSlice(value: getNumWinsForKey(keys.fourGuess), color: colors[3]))
+        slices.append(PieChartSlice(value: getNumWinsForKey(keys.fiveGuess), color: colors[4]))
+        slices.append(PieChartSlice(value: getNumWinsForKey(keys.sixGuess), color: colors[5]))
+        
         for (i, _) in slices.enumerated() {
             self.endTrims.append(getEndTrimAtIndex(i))
         }
+    }
+    
+    func getNumWinsForKey(_ key: String) -> Int {
+        let defaults = UserDefaults.standard
+        return defaults.integer(forKey: key)
+        
     }
     
     func getEndTrimAtIndex(_ index: Int) -> CGFloat {
