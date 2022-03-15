@@ -28,7 +28,9 @@ class PieChartViewModel: ObservableObject {
                 timer.invalidate()
                 
                 if index < 5 {
-                    self.animateAtIndex(index + 1)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        self.animateAtIndex(index + 1)
+                    }
                 }
             }
         }
