@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PieChartView: View {
-    let viewModel: PieChartViewModel
+    @StateObject var viewModel: PieChartViewModel
     @State var selectedIndex: Int? = nil
     
     var body: some View {
@@ -16,12 +16,18 @@ struct PieChartView: View {
             ZStack {
                 ForEach(0 ..< viewModel.slices.count) { i in
                         Circle()
-                            .trim(from: i == 0 ? 0.0 : viewModel.endTrims[i-1], to: viewModel.endTrims[i])
+                        .trim(from: viewModel.slices[i].startAngle, to: viewModel.currentAngles[i])
                             .stroke(viewModel.slices[i].color,lineWidth: 50)
                             .scaleEffect(i == selectedIndex ? 1.1 : 1.0)
                             .animation(.spring(), value: selectedIndex)
+                            .rotationEffect(.degrees(-90))
                             .onTapGesture {
                                 selectedIndex = i
+                            }
+                            .onAppear {
+                                if i == 0 {
+                                    viewModel.animateAtIndex(i)
+                                }
                             }
                 }
                 .frame(width: 200, height: 250)

@@ -11,4 +11,6 @@ import SwiftUI
 struct PieChartSlice {
     var value: Int
     var color: Color
+    var startAngle: CGFloat
+    var endAngle: CGFloat
 }
