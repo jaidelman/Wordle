@@ -27,7 +27,7 @@ struct LetterView: View {
 
 struct LetterView_Previews: PreviewProvider {
     static var previews: some View {
-        let letter = Letter(letter: "a", color: .gray)
+        let letter = Letter(letter: "w", color: .correctGreen)
         
         HStack {
             Spacer()

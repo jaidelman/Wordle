@@ -42,7 +42,7 @@ struct PieChartView: View {
             Text("# of Guesses")
                 .foregroundColor(.black)
             HStack {
-                ForEach( 0 ..< viewModel.slices.count/2 ){ i in
+                ForEach( 0 ..< viewModel.slices.count/2, id: \.self ){ i in
                     ZStack {
                         RoundedRectangle(cornerRadius: 0)
                             .fill(viewModel.colors[i])
@@ -53,7 +53,7 @@ struct PieChartView: View {
                 }
             }
             HStack {
-                ForEach( viewModel.slices.count/2 ..< viewModel.slices.count ){ i in
+                ForEach( viewModel.slices.count/2 ..< viewModel.slices.count, id: \.self ){ i in
                     ZStack {
                         RoundedRectangle(cornerRadius: 0)
                             .fill(viewModel.colors[i])
